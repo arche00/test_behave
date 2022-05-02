@@ -14,5 +14,8 @@ class LaunchPage(Page):
         self.click_on_element(self.LOGIN_BTN)
         time.sleep(5)
 
+    def check_if_element_is_visible(self):
+        time.sleep(5)
+        self.find_element(self.LOGIN_BTN).is_displayed()
     # def create_new_account(self):
     #     self.click_on_element(self.BUTTON_CREATE_ACCOUNT)

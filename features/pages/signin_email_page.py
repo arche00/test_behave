@@ -12,9 +12,9 @@ class SignInEmailPage(Page):
     password = "a1234567"
 
     def login_with_email_and_password(self, email, password):
-        time.sleep(15)
+        time.sleep(5)
 
         self.input(email, self.EMAIL_INPUT)
         self.input(password, self.PASSWORD_INPUT)
         self.click_on_element(self.SIGNIN_BTN)
-        time.sleep(15)
+        time.sleep(10)
