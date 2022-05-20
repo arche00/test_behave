@@ -2,6 +2,7 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from features.pages.base_page import Page
+from selenium.webdriver.support import expected_conditions as EC
 from features.test_data import EMAIL, PASSWORD
 
 class SignInEmailPage(Page):
@@ -12,8 +13,9 @@ class SignInEmailPage(Page):
     password = "a1234567"
 
     def login_with_email_and_password(self, email, password):
-        time.sleep(5)
+        time.sleep(10)
 
+        #self.wait_for_element(self.EMAIL_INPUT)
         self.input(email, self.EMAIL_INPUT)
         self.input(password, self.PASSWORD_INPUT)
         self.click_on_element(self.SIGNIN_BTN)

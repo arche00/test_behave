@@ -9,15 +9,15 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @given("나는 앱을 열고 MY탭을 클릭한다")
 def click_mytab(context):
-    MYTAB = context.browser.find_element(By.XPATH, "//android.widget.TextView[@text = 'MY']")
-
-    context.action.move_to_element(MYTAB).click(MYTAB).perform()
-
+    #MYTAB = context.browser.find_element(By.XPATH, "//android.widget.TextView[@text = 'MY']")
+    #
+    # context.action.move_to_element(MYTAB).click(MYTAB).perform()
+    context.app.main_page.move_to_mytab()
 @when("설정으로 이동한다")
 def click_setting_btn(context):
     context.app.setting_page.move_to_setting()
 
-@when("로그아웃을 클릭힌다")
+@step("로그아웃을 클릭힌다")
 def click_signout_btn(context):
     context.app.setting_page.sign_out()
 

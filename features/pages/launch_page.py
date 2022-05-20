@@ -2,7 +2,7 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from features.pages.base_page import Page
-
+from appium import webdriver
 
 class LaunchPage(Page):
     LOGIN_BTN = (By.XPATH, "//android.widget.TextView[@text = '로그인']")
