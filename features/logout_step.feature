@@ -1,3 +1,4 @@
+@test
 Feature: 로그아웃
   Scenario: 로그아웃을 한다
     Given 나는 앱을 열고 MY탭을 클릭한다

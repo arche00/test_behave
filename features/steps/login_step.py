@@ -1,4 +1,4 @@
-from behave import given, when, then
+from behave import given, when, then, step
 from appium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -17,9 +17,9 @@ def open_login_page(context):
 def sign_in_email_account(context):
     context.app.login_provider_page.sign_in_email_account()
 
-@when("{email} 과 {password} 를 입력하고 로그인한다")
+@step("{email} 과 {password} 를 입력하고 로그인한다")
 def login_with_email_and_password(context, email, password ):
-    context.app.signin_email_page.login_with_email_and_password(email=email, password=password)
+    context.app.signin_email_page.login_with_email_and_password(email, password)
 
 @then("로그인이 완료되면 소식탭으로 포커스가 된다")
 def check_current_tab(context):

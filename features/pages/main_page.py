@@ -10,8 +10,39 @@ def compare_data_with_expected(expected, real):
 
 class MainPage(Page):
     MYTAB = (By.XPATH, "//android.widget.TextView[@text = 'MY']" )
+    CLASSTAB = (By.XPATH, "//android.widget.TextView[@text = '클래스']")
+    FEEDTAB = (By.XPATH, "//android.widget.TextView[@text = '소식']")
 
     def move_to_mytab(self):
         time.sleep(5)
         self.tap_element(self.MYTAB)
         time.sleep(5)
+
+    def move_to_classtab(self):
+        time.sleep(5)
+        self.tap_element(self.CLASSTAB)
+        time.sleep(5)
+
+    def move_to_feedtab(self):
+        time.sleep(5)
+        self.tap_element(self.FEEDTAB)
+        time.sleep(5)
+
+class ClassHome(MainPage):
+    CLASSLIST = (By.XPATH, "//android.widget.TextView[@text = '전체 클래스 >']")
+    el = (By.XPATH, "//android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.ImageView")
+
+    def move_to_classhome(self):
+        time.sleep(5)
+        self.tap_element(self.CLASSLIST)
+        time.sleep(5)
+        self.click_on_element(self.el)
+        time.sleep(5)
+
+    def click_write_btn(self, write_btn):
+        time.sleep(5)
+        # self.tap_element(write_btn)
+        self.click_on_element(write_btn)
+        time.sleep(5)
+
+

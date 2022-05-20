@@ -4,7 +4,7 @@
         "browserstack.key": "cAa6AHTxytDE459jqjK6",
         "project": "First Behave Android Project",
         "build": "browserstack-build-1",
-        "name": "local_test",
+        "name": "bs_test",
         "browserstack.debug": true,
         "app": "bs://49441c7bc039d834b76df672e3facb1b10e7d0eb",
         "device": "Samsung Galaxy S22",
