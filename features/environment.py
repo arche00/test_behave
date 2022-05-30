@@ -1,8 +1,7 @@
 from appium import webdriver
 from app.application import Application
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium import webdriver
-from browserstack.local import Local
+# from selenium import webdriver
 import os, json
 
 
@@ -10,7 +9,10 @@ def before_scenario(context, scenario):
     context.browser = webdriver.Remote("http://0.0.0.0:4723/wd/hub", desired_capabilities={
         "platformName": "Android",
         "udid": "R3CN50DKBJN",
-        "app": "/Users/classting/apk/com.Classting.apk",
+        # office
+        # "app": "/Users/classting/apk/com.Classting.apk",
+        # home
+        "app": "/Users/tj/apk/com.Classting.apk",
         "automationName": "Appium",
         "newCommandTimeout": 300,
         "noReset": "true",

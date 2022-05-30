@@ -30,8 +30,9 @@ class MainPage(Page):
 
 class ClassHome(MainPage):
     CLASSLIST = (By.XPATH, "//android.widget.TextView[@text = '전체 클래스 >']")
-    el = (By.XPATH, "//android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.ImageView")
-
+    el = (By.XPATH, "//android.widget.TextView[@text = '테스트클래스04']")
+    #//android.widget.TextView[@text = '테스트클래스04']
+    #//android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.ImageView
     def move_to_classhome(self):
         time.sleep(5)
         self.tap_element(self.CLASSLIST)
@@ -44,5 +45,11 @@ class ClassHome(MainPage):
         # self.tap_element(write_btn)
         self.click_on_element(write_btn)
         time.sleep(5)
+
+    def select_post_type(self,type):
+        time.sleep(2)
+        self.click_on_element(type)
+        time.sleep(2)
+
 
 

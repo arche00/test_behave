@@ -13,20 +13,26 @@ def move_to_classhome(context):
 
 @when('글쓰기를 선택한다')
 def click_write_btn(context):
-    write_btn = (By.XPATH, "//android.view.View[2]/android.widget.Image")
-
+    write_btn = (By.XPATH, "//android.widget.Button")
+    type = (By.XPATH, "//android.widget.TextView[@text = '게시글']")
+    # //android.view.View/android.view.View[1]/android.view.View[2]/android.widget.TextView
+    #//android.widget.Button
+    # //android.view.View[2]/android.widget.Image
     # context.app.base_page.wait_for_element(write_btn)
     # ele = WebDriverWait(context.browser, 10).until(EC.presence_of_element_located(write_btn))
     context.app.base_page.wait_for_element(write_btn)
     context.app.main_page.click_write_btn(write_btn)
+    context.app.main_page.select_post_type(type)
 
 @when('텍스트를 입력하고 완료를 클릭한다')
 def type_text_and_submit(context):
     field = (By.XPATH, "//android.widget.EditText[@text = '본문을 입력하세요.\n']")
     submit = (By.XPATH, "//android.widget.Button[@text = '게시']")
     close_btn = (By.XPATH, "//android.widget.Button[@text = 'Close']")
+    time = context.app.base_page.get_datetime()
 
-    context.app.base_page.input(1234,field)
+    context.app.base_page.input(time, field)
+    context.app.base_page.swipe_to_down()
     context.app.base_page.swipe_to_down()
     context.app.base_page.click_on_element(submit)
     context.app.base_page.click_on_element(close_btn)

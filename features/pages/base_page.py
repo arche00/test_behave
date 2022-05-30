@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
+from appium import webdriver
 import time
 
 
@@ -48,3 +49,6 @@ class Page:
         #                                    value=locator[1])
         self.wait.until(EC.presence_of_element_located(locator))
 
+    def get_datetime(self):
+        datetime = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
+        return datetime
